@@ -1,3 +1,4 @@
 module top_module ( input x, input y, output z );
 assign z = ~x & ~y | x & y;
+//xnor g1 (z,x,y);
 endmodule
