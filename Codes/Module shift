@@ -1,0 +1,7 @@
+module top_module ( input clk, input d, output q );
+    wire t1,t2;
+    my_dff g1(.clk(clk),.d(d),.q(t1));
+    my_dff g2(.clk(clk),.d(t1),.q(t2));
+    my_dff g3(.clk(clk),.d(t2),.q(q));
+                                 
+endmodule
