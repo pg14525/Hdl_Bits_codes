@@ -1,0 +1,15 @@
+module top_module ( 
+    input p1a, p1b, p1c, p1d, p1e, p1f,
+    output p1y,
+    input p2a, p2b, p2c, p2d,
+    output p2y );
+wire w,x,y,z;
+    and g1(w,p2a,p2b);
+    and g2(x,p2c,p2d);
+    or g3(p2y,w,x);
+    
+    and g4(y,p1a,p1c,p1b);
+    and g5(z,p1e,p1d,p1f);
+    or g6(p1y,y,z);
+
+endmodule
