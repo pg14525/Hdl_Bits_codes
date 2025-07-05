@@ -1,0 +1,16 @@
+ module top_module( 
+    input [2:0] a, b,
+    input cin,
+    output [2:0] cout,
+    output [2:0] sum );
+
+    fulladder ff(.a(a[0]),.b(b[0]),.cin(cin),.cout(cout[0]),.sum(sum[0]));
+ 
+    fulladder ff1(.a(a[1]),.b(b[1]),.cin(cout[0]),.cout(cout[1]),.sum(sum[1]));
+ 
+    fulladder ff2(.a(a[2]),.b(b[2]),.cin(cout[1]),.cout(cout[2]),.sum(sum[2]));
+endmodule
+module fulladder (input [2:0] a,b ,input cin , output [2:0] cout ,output [2:0] sum);
+    assign sum = a[2:0]  ^b[2:0] ^ cin;
+    assign cout = a[2:0] & b[2:0] | b[2:0] & cin | cin& a[2:0];
+endmodule
